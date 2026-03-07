@@ -9,27 +9,18 @@
         :root {
             --brand: #00aeef;
             --dark: #0b3c5d;
-        }
-
-        /* ANIMAȚII */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
+            --light: #f7f7f7;
         }
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            animation: fadeIn 1s ease-out;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: #333;
+            line-height: 1.6;
         }
 
-        /* HEADER FIX */
+        /* HEADER */
         header {
             background-color: var(--dark);
             color: white;
@@ -41,167 +32,105 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-sizing: border-box;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
-
-        header img {
-            height: 60px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        /* MENIU DESKTOP */
-        nav {
-            display: flex;
-            gap: 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--brand);
-        }
-
-        /* HAMBURGER */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .hamburger div {
-            width: 28px;
-            height: 3px;
-            background: white;
-            transition: 0.3s;
-        }
-
-        /* MENIU MOBIL */
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            background: var(--dark);
-            width: 100%;
-            padding: 15px;
-        }
-
-        .mobile-menu a {
-            color: white;
-            padding: 10px 0;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
+        nav a { color: white; text-decoration: none; font-weight: 500; margin-left: 20px; transition: 0.3s; }
+        nav a:hover { color: var(--brand); }
 
         /* HERO */
         .hero {
-            margin-top: 100px;
-            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-                        url("ochi-frumos.jpg") center/cover no-repeat;
+            margin-top: 70px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url("https://images.unsplash.com") center/cover no-repeat;
             color: white;
             text-align: center;
-            padding: 120px 20px;
-            animation: fadeIn 1.5s ease-out;
+            padding: 100px 20px;
         }
 
-        .hero h2 {
-            font-size: 2.4rem;
-            margin-bottom: 10px;
-        }
+        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
 
         .btn {
             display: inline-block;
-            padding: 12px 25px;
+            padding: 12px 30px;
             background-color: var(--brand);
             color: white;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 4px;
+            border-radius: 50px;
             transition: 0.3s;
+            cursor: pointer;
         }
 
-        .btn:hover {
-            background-color: #008ec4;
-            transform: scale(1.05);
-        }
+        .btn:hover { background-color: #008ec4; transform: translateY(-3px); }
 
-        /* SECȚIUNI */
-        main {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
+        main { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
 
         section {
-            background-color: white;
-            padding: 25px;
+            background: white;
+            padding: 40px;
             margin-bottom: 40px;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-            animation: slideIn 0.8s ease-out;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
-        section h3 {
-            color: var(--dark);
-        }
+        h3 { color: var(--dark); border-left: 5px solid var(--brand); padding-left: 15px; margin-bottom: 30px; }
 
-        .servicii-lista {
+        /* GALERIE RAME */
+        .rame-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
         }
 
-        .serviciu {
-            border-left: 4px solid var(--brand);
-            padding-left: 10px;
+        .rama-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
             transition: 0.3s;
         }
 
-        .serviciu:hover {
-            transform: translateX(5px);
+        .rama-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        .rama-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            background: #f9f9f9;
+            padding: 10px;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 2fr 3fr;
-            gap: 20px;
+        .rama-card h4 { margin: 15px 0 5px; color: var(--dark); text-transform: uppercase; letter-spacing: 1px; }
+        .rama-card p { font-size: 0.85rem; color: #777; margin-bottom: 15px; }
+
+        /* CEO BADGE */
+        .ceo-section { text-align: center; margin-bottom: 40px; }
+        .ceo-badge {
+            background: var(--dark);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: bold;
         }
 
-        footer {
-            text-align: center;
-            padding: 15px;
-            font-size: 0.85rem;
-            color: #555;
-        }
+        footer { background: #222; color: #ccc; text-align: center; padding: 40px 20px; }
+        .footer-admin { color: var(--brand); font-weight: bold; }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h2 {
-                font-size: 1.9rem;
-            }
+            .hero h2 { font-size: 1.8rem; }
+            section { padding: 20px; }
         }
     </style>
 </head>
@@ -209,118 +138,106 @@
 <body>
 
 <header>
-    <h1>
-        <img src="logo-optic-eyes.png" alt="Logo OPTIC-EYES">
-        OPTIC-EYES – OPTICĂ MEDICALĂ SEBEȘ
-    </h1>
-
+    <h1>OPTIC-EYES SEBEȘ</h1>
     <nav>
-        <a href="#despre">Despre noi</a>
-        <a href="#servicii">Servicii</a>
-        <a href="#oferte">Oferte</a>
+        <a href="#despre">Despre</a>
+        <a href="#rame">Rame Ochelari</a>
         <a href="#contact">Contact</a>
     </nav>
-
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-    <a href="#despre">Despre noi</a>
-    <a href="#servicii">Servicii</a>
-    <a href="#oferte">Oferte</a>
-    <a href="#contact">Contact</a>
-</div>
-
 <section class="hero">
-    <h2>Vederea dumneavoastră, prioritatea noastră</h2>
-    <p>Optică medicală în Sebeș – ochelari de vedere, lentile de contact și consultații optometrice.</p>
-    <a href="#contact" class="btn">Programează-te acum</a>
+    <h2>Excelență în Optică Medicală</h2>
+    <p>Colecții noi de rame și consultații de specialitate în Sebeș.</p>
+    <a href="tel:0735786089" class="btn">Programează-te: 0735 786 089</a>
 </section>
 
 <main>
+    <div class="ceo-section">
+        <div class="ceo-badge">CEO: Sărăcsan Andrei</div>
+    </div>
 
     <section id="despre">
-        <h3>Despre OPTIC-EYES SEBEȘ</h3>
-        <p>
-            La <strong>OPTIC-EYES – Optică Medicală Sebeș</strong> punem pe primul loc sănătatea ochilor tăi.
-            Oferim consultații optometrice, rame moderne și lentile de calitate adaptate stilului și nevoilor tale.
-        </p>
+        <h3>Despre Noi</h3>
+        <p>La <strong>OPTIC-EYES Sebeș</strong>, credem că ochelarii nu sunt doar o necesitate medicală, ci și un accesoriu care îți definește stilul. Sub conducerea lui <strong>Sărăcsan Andrei</strong>, magazinul nostru oferă cele mai noi tehnologii de testare a vederii și un portofoliu vast de branduri recunoscute internațional.</p>
     </section>
 
-    <section id="servicii">
-        <h3>Serviciile noastre</h3>
-        <div class="servicii-lista">
-            <div class="serviciu">
-                <h4>Consultații optometrice</h4>
-                <p>Verificarea acuității vizuale cu aparatură modernă.</p>
+    <section id="rame">
+        <h3>Colecția noastră de Rame</h3>
+        <div class="rame-grid">
+            <!-- CONSUL -->
+            <div class="rama-card">
+                <img src="https://www.glasses2you.co.uk" alt="Rame Consul">
+                <h4>CONSUL</h4>
+                <p>Eleganță Clasică</p>
             </div>
-            <div class="serviciu">
-                <h4>Ochelari de vedere</h4>
-                <p>Rame moderne și lentile de calitate.</p>
+            <!-- BALLANCE -->
+            <div class="rama-card">
+                <img src="https://www.opticalh.com" alt="Rame Ballance">
+                <h4>BALLANCE</h4>
+                <p>Confort și Echilibru</p>
             </div>
-            <div class="serviciu">
-                <h4>Lentile de contact</h4>
-                <p>Lentile zilnice, lunare și speciale.</p>
+            <!-- REVLON -->
+            <div class="rama-card">
+                <img src="https://pretavoir.co.uk" alt="Rame Revlon">
+                <h4>REVLON</h4>
+                <p>Stil Feminin Modern</p>
             </div>
-            <div class="serviciu">
-                <h4>Reparații și ajustări</h4>
-                <p>Reglaje, pernițe, șuruburi și intervenții rapide.</p>
+            <!-- SPIRIT -->
+            <div class="rama-card">
+                <img src="https://lindberg.com" alt="Rame Spirit">
+                <h4>SPIRIT</h4>
+                <p>Design Minimalist Titanium</p>
+            </div>
+            <!-- POLAROID -->
+            <div class="rama-card">
+                <img src="https://static.smartbuyglasses.com" alt="Rame Polaroid">
+                <h4>POLAROID</h4>
+                <p>Claritate și Protecție</p>
+            </div>
+            <!-- PICALDI FONTANA -->
+            <div class="rama-card">
+                <img src="https://images.unsplash.com" alt="Rame Picaldi Fontana">
+                <h4>PICALDI FONTANA</h4>
+                <p>Lux Italian</p>
+            </div>
+            <!-- EFOR -->
+            <div class="rama-card">
+                <img src="https://images.unsplash.com" alt="Rame Efor">
+                <h4>EFOR</h4>
+                <p>Durabilitate Zilnică</p>
+            </div>
+            <!-- SUMMIT -->
+            <div class="rama-card">
+                <img src="https://images.unsplash.com" alt="Rame Summit">
+                <h4>SUMMIT</h4>
+                <p>Vârf de Gamă în Performanță</p>
             </div>
         </div>
-    </section>
-
-    <section id="oferte">
-        <h3>Oferte și promoții</h3>
-        <ul>
-            <li><strong>Reduceri mari </strong> la a doua pereche de ochelari.</li>
-            <li><strong>Control de vedere gratuit</strong> la achiziția de rame și lentile.Personal calificat si autorizat.</li>
-        </ul>
     </section>
 
     <section id="contact">
-        <h3>Contact & program</h3>
-        <div class="contact-grid">
+        <h3>Contact & Program</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
             <div>
-                <p><strong>Telefon:</strong> 0735786089</p>
+                <p><strong>Locație:</strong> Sebeș, Jud. Alba</p>
+                <p><strong>Telefon:</strong> <a href="tel:0735786089" style="color:var(--brand); text-decoration:none;">0735 786 089</a></p>
                 <p><strong>Email:</strong> ssracsan@gmail.com</p>
-                <p><strong>Recenzii Google:</strong> <a href="https://g.page/r/CQNglvSow6NYEBM/review" target="_blank">Click aici</a></p>
-                <p><strong>Program:</strong><br>
-                    Luni–Vineri: 09:00 – 17:00<br>
-                    Sâmbătă: 09:00 – 13:00<br>
-                    Duminică: închis
-                </p>
+                <p><strong>Program:</strong> L-V: 09-17 | S: 09-13</p>
             </div>
-
-            <div>
-                <h4>Scrie-ne un mesaj</h4>
-                <form>
-                    <input type="text" placeholder="Nume" style="width:100%; padding:8px; margin-bottom:10px;">
-                    <input type="email" placeholder="Email" style="width:100%; padding:8px; margin-bottom:10px;">
-                    <textarea rows="4" placeholder="Mesaj" style="width:100%; padding:8px; margin-bottom:10px;"></textarea>
-                    <button class="btn">Trimite</button>
-                </form>
-            </div>
+            <form action="https://formspree.io" method="POST">
+                <input type="text" name="nume" placeholder="Numele tău" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:5px;">
+                <textarea name="mesaj" placeholder="Mesajul tău" rows="3" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:5px;"></textarea>
+                <button type="submit" class="btn" style="width:100%; border:none;">Trimite Solicitare</button>
+            </form>
         </div>
     </section>
-
 </main>
 
 <footer>
-    &copy; <span id="an"></span> OPTIC-EYES – Optică Medicală Sebeș.
+    <p>&copy; 2024 OPTIC-EYES SEBEȘ. Toate drepturile rezervate.</p>
+    <p>Site administrat de <span class="footer-admin">CEO Sărăcsan Andrei</span></p>
 </footer>
-
-<script>
-    document.getElementById('an').textContent = new Date().getFullYear();
-
-    function toggleMenu() {
-        const menu = document.getElementById("mobileMenu");
-        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    }
-</script>
 
 </body>
 </html>
