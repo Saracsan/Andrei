@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OPTIC-EYES SEBEȘ | Optică Medicală | CEO Sărăcsan Andrei</title>
-    <meta name="description" content="Cabinet de optică medicală în Sebeș. Consultații profesionale și rame de brand.">
-
+    
     <style>
         :root {
             --brand: #00aeef;
             --dark: #0b3c5d;
+            --white: #ffffff;
             --bg: #f8f9fa;
         }
 
         * { box-sizing: border-box; scroll-behavior: smooth; }
-        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); line-height: 1.6; }
+        body { margin: 0; font-family: 'Segoe UI', Roboto, sans-serif; background: var(--bg); line-height: 1.6; }
 
-        /* NAVIGARE */
         header {
             background: var(--dark);
             color: white;
@@ -34,10 +33,9 @@
         nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
         nav a:hover { color: var(--brand); }
 
-        /* HERO */
         .hero {
-            height: 50vh;
-            background: linear-gradient(rgba(11, 60, 93, 0.75), rgba(11, 60, 93, 0.75)), 
+            height: 45vh;
+            background: linear-gradient(rgba(11, 60, 93, 0.8), rgba(11, 60, 93, 0.8)), 
                         url('https://images.unsplash.com') center/cover;
             display: flex;
             flex-direction: column;
@@ -45,74 +43,83 @@
             align-items: center;
             color: white;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 50px;
+            padding: 20px;
         }
 
-        /* PAGINA PRINCIPALA */
         main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
         section { background: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
-        /* RAME GRID */
-        .rame-grid {
+        .brand-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
             margin-top: 20px;
         }
-        .brand-box {
-            border: 1px solid #eee;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            background: #fff;
-            transition: 0.3s;
-        }
-        .brand-box:hover { border-color: var(--brand); transform: translateY(-3px); }
+        .brand-card { border: 1px solid #eee; padding: 15px; text-align: center; border-radius: 10px; font-weight: bold; color: var(--dark); transition: 0.3s; }
+        .brand-card:hover { border-color: var(--brand); background: #f0faff; }
 
-        /* CONTACT & MAP */
-        .contact-container {
+        .contact-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
-        .map-box { border-radius: 15px; overflow: hidden; height: 400px; border: 1px solid #ddd; }
 
-        footer { background: #1a1a1a; color: #888; text-align: center; padding: 40px 20px; }
-        .ceo-signature { color: var(--brand); font-weight: bold; font-size: 1.1rem; }
+        /* FIX HARTA */
+        .map-wrapper {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            height: 400px;
+        }
+
+        .btn-gps {
+            display: inline-block;
+            background: #4285F4; /* Culoare Google */
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.3s;
+            text-align: center;
+        }
+        .btn-gps:hover { background: #357ae8; transform: translateY(-2px); }
+
+        .ceo-tag { color: var(--brand); font-weight: bold; font-size: 1.2rem; display: block; margin-top: 15px; }
+
+        footer { background: #1a1a1a; color: #888; text-align: center; padding: 30px; margin-top: 50px; }
 
         @media (max-width: 768px) {
-            .contact-container { grid-template-columns: 1fr; }
-            nav { display: none; }
+            .contact-layout { grid-template-columns: 1fr; }
+            header { flex-direction: column; text-align: center; }
+            nav { margin-top: 10px; }
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="font-weight: bold; font-size: 1.3rem; letter-spacing: 1px;">OPTIC-EYES SEBEȘ</div>
+    <div style="font-weight: bold; font-size: 1.2rem;">OPTIC-EYES SEBEȘ</div>
     <nav>
-        <a href="#despre">Despre</a>
         <a href="#rame">Rame</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1 style="font-size: 3rem; margin: 0;">Viziune Fără Limite</h1>
-    <p style="font-size: 1.2rem;">Cabinet Optică Medicală Sebeș</p>
-    <a href="tel:0735786089" style="background: var(--brand); color: white; text-decoration: none; padding: 12px 30px; border-radius: 50px; font-weight: bold; margin-top: 15px;">SUNĂ ACUM: 0735 786 089</a>
+    <h1>Excelență în Optică Medicală</h1>
+    <p>Manager: Sărăcsan Andrei</p>
+    <a href="tel:0735786089" style="background: var(--brand); color:white; padding: 10px 25px; text-decoration:none; border-radius:50px; font-weight:bold;">SUNAȚI ACUM</a>
 </section>
 
 <main>
-    <section id="despre">
-        <h2 style="color: var(--dark);">Sănătatea Ochilor Tăi</h2>
-        <p>La <strong>OPTIC-EYES SEBEȘ</strong>, oferim consultații computerizate și o gamă largă de rame sub îndrumarea <strong>CEO Sărăcsan Andrei</strong>. Calitatea vederii tale este cartea noastră de vizită.</p>
-    </section>
-
     <section id="rame">
-        <h2 style="color: var(--dark);">Branduri de Rame Disponibile</h2>
-        <div class="rame-grid">
-            <div class="brand-box"><strong>POLAROID</strong></div>
+        <h2 style="color:var(--dark)">Branduri Partenere</h2>
+        <div class="brand-grid">
             <div class="brand-box"><strong>REVLON</strong></div>
             <div class="brand-box"><strong>CONSUL</strong></div>
             <div class="brand-box"><strong>BALLANCE</strong></div>
@@ -130,29 +137,29 @@
     </section>
 
     <section id="contact">
-        <h2 style="color: var(--dark);">Localizare & Program</h2>
-        <div class="contact-container">
+        <h2 style="color:var(--dark)">Locație & Navigare</h2>
+        <div class="contact-layout">
             <div>
                 <p><strong>📍 Adresă:</strong> Bulevardul Lucian Blaga 50, Sebeș</p>
                 <p><strong>📞 Telefon:</strong> 0735 786 089</p>
-                <p><strong>⏰ Program:</strong> L-V: 09:00 - 17:00 | Sâmbătă: 09:00 - 13:00</p>
-                <hr style="opacity: 0.1; margin: 20px 0;">
-                <p><i>"Vederea clară este misiunea noastră zilnică."</i></p>
-                <span class="ceo-signature">Sărăcsan Andrei, CEO</span>
+                <p><strong>⏰ Program:</strong> L-V: 09:00 - 17:00 | S: 09:00 - 13:00</p>
+                <span class="ceo-tag">Sărăcsan Andrei, CEO</span>
+                
+                <!-- BUTON GPS -->
+                <a href="https://www.google.com" target="_blank" class="btn-gps">
+                    🗺️ DESCHIDE ÎN GOOGLE MAPS (GPS)
+                </a>
             </div>
-            <div class="map-box">
-    <!-- ACEST COD VA DEBLOCA HARTA -->
-    <iframe 
-        src="https://www.google.com" 
-        width="100%" 
-        height="100%" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-</div>
-
+            
+            <div class="map-wrapper">
+                <!-- HARTA REPARATA CU LINK EMBED DEBLOCAT -->
+                <iframe 
+                    src="https://www.google.com" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
                 </iframe>
             </div>
         </div>
@@ -160,8 +167,8 @@
 </main>
 
 <footer>
-    <p>&copy; 2024 OPTIC-EYES SEBEȘ. Toate drepturile rezervate.</p>
-    <p>Site administrat de <strong>CEO Sărăcsan Andrei</strong></p>
+    <p>&copy; 2026 OPTIC-EYES SEBEȘ. Toate drepturile rezervate.</p>
+    <p>Management asigurat de <strong>CEO Sărăcsan Andrei</strong></p>
 </footer>
 
 </body>
