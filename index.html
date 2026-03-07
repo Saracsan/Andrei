@@ -3,240 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPTIC-EYES SEBEȘ – Optică medicală</title>
+    <title>OPTIC-EYES SEBEȘ | Optică Medicală & Consultanță | CEO Sărăcsan Andrei</title>
+    
+    <!-- Meta-etichete SEO pentru a fi găsit pe Google -->
+    <meta name="description" content="Cea mai modernă optică medicală din Sebeș. Rame CONSUL, POLAROID, REVLON și consultații computerizate sub conducerea CEO Sărăcsan Andrei.">
+    <meta name="keywords" content="optica medicala sebes, ochelari sebes, consultatii vedere sebes, Saracsan Andrei, rame ochelari sebes">
 
     <style>
         :root {
             --brand: #00aeef;
+            --brand-dark: #008ec4;
             --dark: #0b3c5d;
-            --light: #f7f7f7;
+            --light: #f4f7f9;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--light);
             color: #333;
-            line-height: 1.6;
         }
 
-        /* HEADER */
+        /* HEADER PROFESIONAL */
         header {
-            background-color: var(--dark);
+            background: rgba(11, 60, 93, 0.98);
+            backdrop-filter: blur(10px);
             color: white;
-            padding: 10px 30px;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 1000;
-            box-sizing: border-box;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            z-index: 2000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-area h1 { font-size: 1.1rem; margin: 0; letter-spacing: 1px; }
 
-        nav a { color: white; text-decoration: none; font-weight: 500; margin-left: 20px; transition: 0.3s; }
-        nav a:hover { color: var(--brand); }
-
-        /* HERO */
-        .hero {
-            margin-top: 70px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url("https://images.unsplash.com") center/cover no-repeat;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--brand);
+        nav a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
             transition: 0.3s;
-            cursor: pointer;
+            text-transform: uppercase;
         }
 
-        .btn:hover { background-color: #008ec4; transform: translateY(-3px); }
+        nav a:hover { color: var(--brand); }
 
-        main { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-
-        section {
-            background: white;
-            padding: 40px;
-            margin-bottom: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        /* HERO SECTION DINAMIC */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(11, 60, 93, 0.7), rgba(11, 60, 93, 0.7)), 
+                        url('https://images.unsplash.com') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            margin-top: 60px;
         }
 
-        h3 { color: var(--dark); border-left: 5px solid var(--brand); padding-left: 15px; margin-bottom: 30px; }
+        .hero h2 { font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 20px 0; opacity: 0.9; }
 
-        /* GALERIE RAME */
+        .btn-main {
+            padding: 15px 40px;
+            background: var(--brand);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.4s;
+            box-shadow: 0 4px 15px rgba(0, 174, 239, 0.4);
+        }
+
+        .btn-main:hover { background: var(--brand-dark); transform: scale(1.05); }
+
+        /* SECTIUNI */
+        main { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h3 { font-size: 2.2rem; color: var(--dark); margin-bottom: 10px; }
+        .section-title .bar { width: 60px; height: 4px; background: var(--brand); margin: 0 auto; }
+
+        /* GRID RAME CU EFECTE */
         .rame-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
         }
 
-        .rama-card {
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 12px;
-            overflow: hidden;
+        .brand-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
             text-align: center;
+            box-shadow: var(--shadow);
             transition: 0.3s;
+            border: 1px solid #eee;
         }
 
-        .rama-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .brand-card:hover { transform: translateY(-10px); border-color: var(--brand); }
+        .brand-card img { width: 100%; height: 150px; object-fit: contain; margin-bottom: 20px; }
+        .brand-card h4 { color: var(--dark); font-size: 1.3rem; margin: 10px 0; }
 
-        .rama-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: contain;
-            background: #f9f9f9;
-            padding: 10px;
+        /* CONTACT & HARTA */
+        .contact-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
         }
 
-        .rama-card h4 { margin: 15px 0 5px; color: var(--dark); text-transform: uppercase; letter-spacing: 1px; }
-        .rama-card p { font-size: 0.85rem; color: #777; margin-bottom: 15px; }
+        iframe { border-radius: 15px; width: 100%; height: 350px; border: 0; }
 
-        /* CEO BADGE */
-        .ceo-section { text-align: center; margin-bottom: 40px; }
-        .ceo-badge {
+        footer {
             background: var(--dark);
             color: white;
-            padding: 8px 25px;
-            border-radius: 30px;
-            display: inline-block;
-            font-weight: bold;
+            padding: 60px 5%;
+            text-align: center;
         }
 
-        footer { background: #222; color: #ccc; text-align: center; padding: 40px 20px; }
-        .footer-admin { color: var(--brand); font-weight: bold; }
+        .ceo-signature {
+            font-size: 1.4rem;
+            color: var(--brand);
+            font-weight: bold;
+            margin-top: 20px;
+            display: block;
+        }
 
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero h2 { font-size: 1.8rem; }
-            section { padding: 20px; }
+            .hero h2 { font-size: 2rem; }
+            .contact-box { grid-template-columns: 1fr; }
+            nav { display: none; }
         }
     </style>
 </head>
-
 <body>
 
 <header>
-    <h1>OPTIC-EYES SEBEȘ</h1>
+    <div class="logo-area">
+        <img src="logo-optic-eyes.png" alt="Optic-Eyes" style="height: 40px;">
+        <h1>OPTIC-EYES SEBEȘ</h1>
+    </div>
     <nav>
-        <a href="#despre">Despre</a>
-        <a href="#rame">Rame Ochelari</a>
+        <a href="#rame">Colecții</a>
+        <a href="#servicii">Servicii</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h2>Excelență în Optică Medicală</h2>
-    <p>Colecții noi de rame și consultații de specialitate în Sebeș.</p>
-    <a href="tel:0735786089" class="btn">Programează-te: 0735 786 089</a>
+    <h2>Viziune Fără Compromisuri</h2>
+    <p>Expertiză optometrică și rame de lux, coordonate de o echipă profesionistă în Sebeș.</p>
+    <a href="#contact" class="btn-main">PROGRĂMEAZĂ UN CONSULT</a>
 </section>
 
 <main>
-    <div class="ceo-section">
-        <div class="ceo-badge">CEO: Sărăcsan Andrei</div>
+    <div class="section-title">
+        <h3>Branduri Premium</h3>
+        <div class="bar"></div>
+        <p>Parteneriate oficiale cu cei mai mari producători de rame din lume.</p>
     </div>
 
-    <section id="despre">
-        <h3>Despre Noi</h3>
-        <p>La <strong>OPTIC-EYES Sebeș</strong>, credem că ochelarii nu sunt doar o necesitate medicală, ci și un accesoriu care îți definește stilul. Sub conducerea lui <strong>Sărăcsan Andrei</strong>, magazinul nostru oferă cele mai noi tehnologii de testare a vederii și un portofoliu vast de branduri recunoscute internațional.</p>
-    </section>
-
-    <section id="rame">
-        <h3>Colecția noastră de Rame</h3>
-        <div class="rame-grid">
-            <!-- CONSUL -->
-            <div class="rama-card">
-                <img src="https://www.glasses2you.co.uk" alt="Rame Consul">
-                <h4>CONSUL</h4>
-                <p>Eleganță Clasică</p>
-            </div>
-            <!-- BALLANCE -->
-            <div class="rama-card">
-                <img src="https://www.opticalh.com" alt="Rame Ballance">
-                <h4>BALLANCE</h4>
-                <p>Confort și Echilibru</p>
-            </div>
-            <!-- REVLON -->
-            <div class="rama-card">
-                <img src="https://pretavoir.co.uk" alt="Rame Revlon">
-                <h4>REVLON</h4>
-                <p>Stil Feminin Modern</p>
-            </div>
-            <!-- SPIRIT -->
-            <div class="rama-card">
-                <img src="https://lindberg.com" alt="Rame Spirit">
-                <h4>SPIRIT</h4>
-                <p>Design Minimalist Titanium</p>
-            </div>
-            <!-- POLAROID -->
-            <div class="rama-card">
-                <img src="https://static.smartbuyglasses.com" alt="Rame Polaroid">
-                <h4>POLAROID</h4>
-                <p>Claritate și Protecție</p>
-            </div>
-            <!-- PICALDI FONTANA -->
-            <div class="rama-card">
-                <img src="https://images.unsplash.com" alt="Rame Picaldi Fontana">
-                <h4>PICALDI FONTANA</h4>
-                <p>Lux Italian</p>
-            </div>
-            <!-- EFOR -->
-            <div class="rama-card">
-                <img src="https://images.unsplash.com" alt="Rame Efor">
-                <h4>EFOR</h4>
-                <p>Durabilitate Zilnică</p>
-            </div>
-            <!-- SUMMIT -->
-            <div class="rama-card">
-                <img src="https://images.unsplash.com" alt="Rame Summit">
-                <h4>SUMMIT</h4>
-                <p>Vârf de Gamă în Performanță</p>
-            </div>
+    <div class="rame-grid" id="rame">
+        <div class="brand-card">
+            <img src="https://upload.wikimedia.org" alt="Polaroid">
+            <h4>POLAROID</h4>
+            <p>Lentile polarizate de înaltă definiție.</p>
         </div>
-    </section>
-
-    <section id="contact">
-        <h3>Contact & Program</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-            <div>
-                <p><strong>Locație:</strong> Sebeș, Jud. Alba</p>
-                <p><strong>Telefon:</strong> <a href="tel:0735786089" style="color:var(--brand); text-decoration:none;">0735 786 089</a></p>
-                <p><strong>Email:</strong> ssracsan@gmail.com</p>
-                <p><strong>Program:</strong> L-V: 09-17 | S: 09-13</p>
-            </div>
-            <form action="https://formspree.io" method="POST">
-                <input type="text" name="nume" placeholder="Numele tău" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:5px;">
-                <textarea name="mesaj" placeholder="Mesajul tău" rows="3" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:5px;"></textarea>
-                <button type="submit" class="btn" style="width:100%; border:none;">Trimite Solicitare</button>
-            </form>
+        <div class="brand-card">
+            <img src="https://www.revlon.com" alt="Revlon">
+            <h4>REVLON</h4>
+            <p>Rafinament și stil feminin contemporan.</p>
         </div>
-    </section>
+        <div class="brand-card">
+            <img src="https://logos-world.net" alt="Summit">
+            <h4>SUMMIT</h4>
+            <p>Performanță și durabilitate extremă.</p>
+        </div>
+        <!-- Adaugă restul de branduri similar -->
+        <div class="brand-card">
+            <h4>CONSUL / BALLANCE</h4>
+            <p>Design ergonomic pentru confort zilnic.</p>
+        </div>
+    </div>
+
+    <div class="section-title" style="margin-top: 100px;">
+        <h3>Locația Noastră în Sebeș</h3>
+        <div class="bar"></div>
+    </div>
+
+    <div class="contact-box" id="contact">
+        <div>
+            <h4>Programări & Info</h4>
+            <p><strong>📍 Adresă:</strong> Sebeș, Județul Alba</p>
+            <p><strong>📞 Telefon direct:</strong> <a href="tel:0735786089" style="color:var(--brand); font-weight:bold; text-decoration:none;">0735 786 089</a></p>
+            <p><strong>⏰ Program:</strong> Luni-Vineri (09:00 - 17:00)</p>
+            <hr style="opacity: 0.1; margin: 20px 0;">
+            <p><i>"Vederea clară este un drept, nu un lux. Vă așteptăm pentru un consult personalizat."</i></p>
+            <span class="ceo-signature">Sărăcsan Andrei, CEO</span>
+        </div>
+        <div>
+            <!-- HARTA REALA (Inlocuieste cu embed-ul tau din Google Maps pentru adresa exacta) -->
+            <iframe src="https://www.google.com"></iframe>
+        </div>
+    </div>
 </main>
 
 <footer>
     <p>&copy; 2024 OPTIC-EYES SEBEȘ. Toate drepturile rezervate.</p>
-    <p>Site administrat de <span class="footer-admin">CEO Sărăcsan Andrei</span></p>
+    <p>Site dezvoltat sub managementul direct al <strong>CEO Sărăcsan Andrei</strong></p>
+    <div style="margin-top: 20px;">
+        <a href="https://g.page" target="_blank" class="btn-main" style="padding: 10px 20px; font-size: 0.8rem;">LASĂ-NE O RECENZIE PE GOOGLE</a>
+    </div>
 </footer>
 
 </body>
