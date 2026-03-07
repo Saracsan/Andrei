@@ -12,7 +12,7 @@
         header { background: var(--dark); color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
         nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
         
-        .hero { height: 40vh; background: linear-gradient(rgba(11, 60, 93, 0.8), rgba(11, 60, 93, 0.8)), url('https://images.unsplash.com') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; margin-top: 50px; }
+        .hero { height: 35vh; background: linear-gradient(rgba(11, 60, 93, 0.8), rgba(11, 60, 93, 0.8)), url('https://images.unsplash.com') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; margin-top: 50px; }
 
         main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
         section { background: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
@@ -22,17 +22,31 @@
         .brand-card { border: 1px solid #eee; padding: 15px; text-align: center; border-radius: 10px; font-weight: bold; background: #fff; transition: 0.3s; }
         .brand-card:hover { border-color: var(--brand); transform: translateY(-3px); }
 
-        /* FORMULAR & REVIEWS */
+        /* MESAJ */
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
+        .btn-send { background: var(--brand); color: white; border: none; padding: 12px 35px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-send:hover { background: #008ec4; }
+
+        /* CONTACT & HARTA REPARATA */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        input, textarea { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; }
-        .btn-send { background: var(--brand); color: white; border: none; padding: 12px 30px; border-radius: 50px; font-weight: bold; cursor: pointer; width: 100%; }
-        .btn-google { display: inline-block; background: #ea4335; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; }
+        
+        /* HARTA CA IMAGINE BUTON - EVITA ORICE EROARE GOOGLE */
+        .map-button { 
+            display: block; 
+            width: 100%; 
+            height: 300px; 
+            background: url('https://www.mapquestapi.com|marker-md-blue-O') center/cover;
+            border-radius: 15px; 
+            border: 2px solid #ddd;
+            position: relative;
+            text-decoration: none;
+            overflow: hidden;
+        }
+        .map-overlay { position: absolute; bottom: 0; width: 100%; background: rgba(11, 60, 93, 0.9); color: white; text-align: center; padding: 10px; font-weight: bold; }
 
-        /* CONTACT & HARTA */
         .btn-gps { display: inline-block; background: #4285F4; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; width: 100%; text-align: center; }
-        .map-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #eee; border-radius: 15px; text-decoration: none; color: #333; border: 2px dashed var(--brand); height: 300px; text-align: center; padding: 20px; }
-
         .ceo-tag { color: var(--brand); font-weight: bold; font-size: 1.2rem; display: block; margin-top: 10px; }
+        
         footer { background: #1a1a1a; color: #888; text-align: center; padding: 30px; }
 
         @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } nav { display: none; } }
@@ -51,9 +65,9 @@
 </section>
 
 <main>
-    <!-- SECTIUNEA RAME -->
+    <!-- RAME -->
     <section id="rame">
-        <h3>Branduri Disponibile</h3>
+        <h3>Branduri de Rame Disponibile</h3>
         <div class="brand-grid">
             <div class="brand-card">CONSUL</div>
             <div class="brand-card">BALLANCE</div>
@@ -66,30 +80,23 @@
         </div>
     </section>
 
-    <!-- SECTIUNEA PROGRAMARE & RECENZII -->
-    <section id="programare">
-        <div class="grid-2">
-            <div>
-                <h3>Trimite-ne un mesaj</h3>
-                <form action="https://formspree.io" method="POST">
-                    <input type="text" name="name" placeholder="Nume" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <textarea name="message" rows="4" placeholder="Mesaj" required></textarea>
-                    <button type="submit" class="btn-send">TRIMITE ACUM</button>
-                </form>
+    <!-- FORMULAR MESAJ -->
+    <section id="mesaj">
+        <h3>Trimite-ne un mesaj</h3>
+        <p>Ai întrebări despre ochelari sau vrei o programare? Scrie-ne mai jos:</p>
+        <form action="https://formspree.io" method="POST">
+            <div class="grid-2">
+                <input type="text" name="name" placeholder="Numele tău" required>
+                <input type="email" name="email" placeholder="Adresa de email" required>
             </div>
-            <div style="text-align: center; background: #f0f7ff; padding: 20px; border-radius: 15px;">
-                <h3>Recenzii Google</h3>
-                <p>Spune-ne părerea ta!</p>
-                <div style="color: #ffcc00; font-size: 25px; margin-bottom: 10px;">★★★★★</div>
-                <a href="https://g.page" target="_blank" class="btn-google">LASĂ O RECENZIE</a>
-            </div>
-        </div>
+            <textarea name="message" rows="4" placeholder="Mesajul tău (ex: Vreau o programare pentru consult)" required></textarea>
+            <button type="submit" class="btn-send">TRIMITE MESAJUL</button>
+        </form>
     </section>
 
-    <!-- SECTIUNEA CONTACT CU LOCATIA DIN LINK-UL TAU -->
+    <!-- CONTACT & HARTA -->
     <section id="contact">
-        <h3>Localizare Magazin</h3>
+        <h3>Unde ne găsiți?</h3>
         <div class="grid-2">
             <div>
                 <p><strong>📍 Adresă:</strong> Bulevardul Lucian Blaga 79, Sebeș</p>
@@ -97,17 +104,14 @@
                 <p><strong>⏰ Program:</strong> L-V: 09:00 - 17:00 | S: 09:00 - 13:00</p>
                 <span class="ceo-tag">Sărăcsan Andrei, CEO</span>
                 
-                <!-- ACEST BUTON FOLOSESTE COORDONATELE DIN LINK-UL TAU SHARE.GOOGLE -->
                 <a href="https://www.google.com" target="_blank" class="btn-gps">
                     🚀 PORNEȘTE NAVIGAREA GPS
                 </a>
             </div>
             
-            <!-- ACEST LINK TRIMITE CATRE PAGINA OFICIALA GOOGLE MAPS PENTRU A EVITA EROAREA DE CONEXIUNE -->
-            <a href="https://www.google.com" target="_blank" class="map-placeholder">
-                <span style="font-size: 40px;">📍</span>
-                <p><strong>VEZI HARTA INTERACTIVĂ</strong></p>
-                <p>(Apasă aici pentru a deschide Google Maps)</p>
+            <!-- ACEASTA ESTE HARTA CARE NU MAI DA EROARE -->
+            <a href="https://www.google.com" target="_blank" class="map-button">
+                <div class="map-overlay">APASĂ PENTRU HARTA INTERACTIVĂ</div>
             </a>
         </div>
     </section>
@@ -119,4 +123,3 @@
 
 </body>
 </html>
-
