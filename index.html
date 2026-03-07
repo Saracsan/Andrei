@@ -4,115 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OPTIC-EYES SEBEȘ | Optică Medicală | CEO Sărăcsan Andrei</title>
+    
     <style>
-        :root { --brand: #00aeef; --dark: #0b3c5d; --bg: #f8f9fa; }
+        :root { --brand: #00aeef; --dark: #0b3c5d; --bg: #f4f7f9; }
         * { box-sizing: border-box; scroll-behavior: smooth; }
-        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); line-height: 1.6; }
+        body { margin: 0; font-family: 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
 
+        /* HEADER */
         header { background: var(--dark); color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
-        
-        .hero { height: 35vh; background: linear-gradient(rgba(11, 60, 93, 0.8), rgba(11, 60, 93, 0.8)), url('https://images.unsplash.com') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; margin-top: 50px; }
+        header h1 { font-size: 1.1rem; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; }
+        nav a:hover { color: var(--brand); }
 
-        main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        section { background: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        /* HERO */
+        .hero { height: 40vh; background: linear-gradient(rgba(11, 60, 93, 0.8), rgba(11, 60, 93, 0.8)), url('https://images.unsplash.com') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; margin-top: 50px; padding: 20px; }
+        .hero h2 { font-size: 2.5rem; margin: 0; }
 
-        /* RAME */
-        .brand-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; }
-        .brand-card { border: 1px solid #eee; padding: 15px; text-align: center; border-radius: 10px; font-weight: bold; background: #fff; transition: 0.3s; }
-        .brand-card:hover { border-color: var(--brand); transform: translateY(-3px); }
+        /* PAGINA PRINCIPALA */
+        main { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        section { background: #fff; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        h3 { color: var(--dark); border-left: 5px solid var(--brand); padding-left: 15px; margin-bottom: 30px; text-transform: uppercase; }
 
-        /* MESAJ */
-        input, textarea { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
-        .btn-send { background: var(--brand); color: white; border: none; padding: 12px 35px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .btn-send:hover { background: #008ec4; }
+        /* GALERIE RAME CU IMAGINI */
+        .rame-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+        .rama-card { border: 1px solid #eee; border-radius: 12px; overflow: hidden; transition: 0.3s; background: #fff; text-align: center; padding-bottom: 15px; }
+        .rama-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--brand); }
+        .rama-card img { width: 100%; height: 160px; object-fit: contain; background: #f9f9f9; padding: 10px; }
+        .rama-card h4 { margin: 15px 0 5px; color: var(--dark); font-size: 1.1rem; }
+        .rama-card p { font-size: 0.8rem; color: #777; margin: 0; }
 
-        /* CONTACT & HARTA REPARATA */
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        
-        /* HARTA CA IMAGINE BUTON - EVITA ORICE EROARE GOOGLE */
-        .map-button { 
-            display: block; 
-            width: 100%; 
-            height: 300px; 
-            background: url('https://www.mapquestapi.com|marker-md-blue-O') center/cover;
-            border-radius: 15px; 
-            border: 2px solid #ddd;
-            position: relative;
-            text-decoration: none;
-            overflow: hidden;
-        }
-        .map-overlay { position: absolute; bottom: 0; width: 100%; background: rgba(11, 60, 93, 0.9); color: white; text-align: center; padding: 10px; font-weight: bold; }
+        /* FORMULAR & CONTACT */
+        .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
+        .btn-submit { background: var(--brand); color: white; border: none; padding: 15px; border-radius: 50px; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; }
+        .btn-submit:hover { background: #008ec4; transform: scale(1.02); }
 
-        .btn-gps { display: inline-block; background: #4285F4; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; width: 100%; text-align: center; }
-        .ceo-tag { color: var(--brand); font-weight: bold; font-size: 1.2rem; display: block; margin-top: 10px; }
-        
-        footer { background: #1a1a1a; color: #888; text-align: center; padding: 30px; }
+        /* HARTA */
+        .map-box { border-radius: 15px; overflow: hidden; height: 350px; border: 1px solid #ddd; margin-top: 20px; }
+        .btn-gps { display: block; background: #4285F4; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; text-align: center; margin-top: 15px; }
 
-        @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } nav { display: none; } }
+        .ceo-signature { color: var(--brand); font-weight: bold; font-size: 1.2rem; display: block; margin-top: 20px; }
+        footer { background: #1a1a1a; color: #888; text-align: center; padding: 40px 20px; margin-top: 50px; }
+
+        @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; } nav { display: none; } }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="font-weight: bold; font-size: 1.2rem;">OPTIC-EYES SEBEȘ</div>
+    <h1>OPTIC-EYES SEBEȘ</h1>
     <nav><a href="#rame">Rame</a><a href="#contact">Contact</a></nav>
 </header>
 
 <section class="hero">
-    <h1>Optică Medicală Sebeș</h1>
-    <p>Manager: Sărăcsan Andrei</p>
+    <h2>Viziune Clară la Sebeș</h2>
+    <p>Manager General: Sărăcsan Andrei</p>
 </section>
 
 <main>
-    <!-- RAME -->
+    <!-- SECTIUNE RAME CU IMAGINI AUTOMATE -->
     <section id="rame">
-        <h3>Branduri de Rame Disponibile</h3>
-        <div class="brand-grid">
-            <div class="brand-card">CONSUL</div>
-            <div class="brand-card">BALLANCE</div>
-            <div class="brand-card">REVLON</div>
-            <div class="brand-card">SPIRIT</div>
-            <div class="brand-card">POLAROID</div>
-            <div class="brand-card">PICALDI FONTANA</div>
-            <div class="brand-card">EFOR</div>
-            <div class="brand-card">SUMMIT</div>
+        <h3>Colecțiile de Rame Disponibile</h3>
+        <div class="rame-grid">
+            <div class="rama-card">
+                <img src="https://images.unsplash.com" alt="Consul">
+                <h4>CONSUL</h4>
+                <p>Eleganță și Stil Clasic</p>
+            </div>
+            <div class="rama-card">
+                <img src="https://images.unsplash.com" alt="Polaroid">
+                <h4>POLAROID</h4>
+                <p>Protecție și Claritate</p>
+            </div>
+            <div class="rama-card">
+                <img src="https://images.unsplash.com" alt="Revlon">
+                <h4>REVLON</h4>
+                <p>Rafinament Feminin</p>
+            </div>
+            <div class="rama-card">
+                <img src="https://images.unsplash.com" alt="Spirit">
+                <h4>SPIRIT</h4>
+                <p>Design Minimalist</p>
+            </div>
+            <div class="rama-card">
+                <img src="https://images.unsplash.com" alt="Ballance">
+                <h4>BALLANCE</h4>
+                <p>Echilibru și Confort</p>
+            </div>
+            <div class="rama-card">
+                <img src="https://images.unsplash.com" alt="Picaldi">
+                <h4>PICALDI FONTANA</h4>
+                <p>Lux Italian</p>
+            </div>
+            <div class="rama-card">
+                <img src="https://images.unsplash.com" alt="Summit">
+                <h4>SUMMIT</h4>
+                <p>Performanță Ridicată</p>
+            </div>
+            <div class="rama-card">
+                <img src="https://images.unsplash.com" alt="Efor">
+                <h4>EFOR</h4>
+                <p>Calitate Zilnică</p>
+            </div>
         </div>
     </section>
 
-    <!-- FORMULAR MESAJ -->
-    <section id="mesaj">
-        <h3>Trimite-ne un mesaj</h3>
-        <p>Ai întrebări despre ochelari sau vrei o programare? Scrie-ne mai jos:</p>
-        <form action="https://formspree.io" method="POST">
-            <div class="grid-2">
-                <input type="text" name="name" placeholder="Numele tău" required>
-                <input type="email" name="email" placeholder="Adresa de email" required>
-            </div>
-            <textarea name="message" rows="4" placeholder="Mesajul tău (ex: Vreau o programare pentru consult)" required></textarea>
-            <button type="submit" class="btn-send">TRIMITE MESAJUL</button>
-        </form>
-    </section>
-
-    <!-- CONTACT & HARTA -->
+    <!-- CONTACT SI MESAJ -->
     <section id="contact">
-        <h3>Unde ne găsiți?</h3>
-        <div class="grid-2">
+        <h3>Contact & Programări</h3>
+        <div class="contact-layout">
+            <div>
+                <p>Trimite-ne un mesaj direct pentru programări:</p>
+                <form action="https://formspree.io" method="POST">
+                    <input type="text" name="nume" placeholder="Numele tău" required>
+                    <input type="email" name="email" placeholder="Email-ul tău" required>
+                    <textarea name="mesaj" rows="5" placeholder="Mesajul tău (ex: Doresc o programare)" required></textarea>
+                    <button type="submit" class="btn-submit">TRIMITE MESAJUL</button>
+                </form>
+            </div>
             <div>
                 <p><strong>📍 Adresă:</strong> Bulevardul Lucian Blaga 79, Sebeș</p>
                 <p><strong>📞 Telefon:</strong> <a href="tel:0735786089" style="text-decoration:none; color:var(--brand); font-weight:bold;">0735 786 089</a></p>
-                <p><strong>⏰ Program:</strong> L-V: 09:00 - 17:00 | S: 09:00 - 13:00</p>
-                <span class="ceo-tag">Sărăcsan Andrei, CEO</span>
+                <p><strong>⏰ Program:</strong> L-V: 09-17 | S: 09-13</p>
+                <span class="ceo-signature">Sărăcsan Andrei, CEO</span>
                 
-                <a href="https://www.google.com" target="_blank" class="btn-gps">
-                    🚀 PORNEȘTE NAVIGAREA GPS
-                </a>
+                <a href="https://www.google.com" target="_blank" class="btn-gps">🚀 PORNEȘTE NAVIGAREA GPS</a>
+                
+                <div class="map-box">
+                    <iframe width="100%" height="100%" frameborder="0" src="https://maps.google.com" style="border:0;"></iframe>
+                </div>
             </div>
-            
-            <!-- ACEASTA ESTE HARTA CARE NU MAI DA EROARE -->
-            <a href="https://www.google.com" target="_blank" class="map-button">
-                <div class="map-overlay">APASĂ PENTRU HARTA INTERACTIVĂ</div>
-            </a>
         </div>
     </section>
 </main>
